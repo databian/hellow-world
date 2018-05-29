@@ -1,0 +1,13 @@
+%% 自动阈值并导出数值
+close,clear,clc;
+image = imread('小六.jpg');           %读取原始文件
+I = rgb2gray(image);                    %转灰度
+for i=1:1:25
+    gray = i*10;                %设定灰度值
+    [ima{i},info(i,1),info(i,2),info(i,3)]=threshold_1(gray,I);             %调用自己写的阈值函数
+    info(i,4)=gray;             
+end
+figure(1);
+plot(info(:,4),info(:,3),'r');              %作图
+title('阈值（x）-孔隙率（y）曲线');
+saveas(figure(1),'quxian','png');           %存储图像
