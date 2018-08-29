@@ -1,0 +1,7 @@
+//This is a file made in C.
+#include <stdio.h>
+int main()
+{
+  print("I start learning C language at 2018/8/28");
+  return 0;
+}
